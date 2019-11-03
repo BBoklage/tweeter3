@@ -3,7 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-
+use App\User;
 class Post extends JsonResource
 {
     /**
@@ -16,12 +16,19 @@ class Post extends JsonResource
     {
         //Would return all data 
         // return parent::toArray($request);
-
+        $author = User::find($this->user_id);
         return [
             'id' => $this->id,
-            'post' => $this->post
+            'post' => $this->post,
+            'author' => $author->name
         ];
 
 
     }
+    // public function with($request)
+    // {
+    //     return [
+            
+    //     ];
+    // }
 }
