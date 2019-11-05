@@ -20,15 +20,11 @@ class Post extends JsonResource
         return [
             'id' => $this->id,
             'post' => $this->post,
-            'author' => $author->name
+            'author' => $author->name,
+            'author_id' => $author->id,
+            'edit' => false,
         ];
 
 
     }
-    // public function with($request)
-    // {
-    //     return [
-            
-    //     ];
-    // }
 }
